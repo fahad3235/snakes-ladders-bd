@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snakes &amp; Ladders BD</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <button id="langBtn" class="ghost" type="button">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+  </div>
+  <header>
+    <h1 id="appTitle">Snakes &amp; Ladders BD</h1>
+    <p class="subtitle" id="appSubtitle"></p>
+  </header>
+
+  <!-- Setup screen -->
+  <section id="setupCard" class="card" aria-label="setup">
+    <h2 id="setupTitle"></h2>
+    <label for="playerCount" id="playersLabel"></label>
+    <select id="playerCount">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4" selected>4</option>
+    </select>
+    <label for="computerCount" id="computerLabel"></label>
+    <select id="computerCount">
+      <option value="0" selected>0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <div id="nameFields"></div>
+    <button id="startBtn" class="wide" type="button"></button>
+  </section>
+
+  <!-- Game screen -->
+  <main id="gameCard" class="hidden">
+    <section class="card">
+      <div class="turnbar">
+        <span class="dot" id="turnDot"></span>
+        <span class="who" id="turnText"></span>
+      </div>
+      <div class="dice-row">
+        <div class="dice" id="diceFace" aria-live="polite">&#9856;</div>
+        <div class="dice-msg" id="diceMsg"></div>
+        <button id="rollBtn" type="button"></button>
+      </div>
+      <div class="players-row" id="playersRow"></div>
+    </section>
+
+    <section class="card board-wrap">
+      <div class="board" id="board" role="grid" aria-label="Snakes and Ladders board"></div>
+    </section>
+
+    <section class="card">
+      <h2 id="legendTitle"></h2>
+      <div class="legend">
+        <div>
+          <h3 id="laddersTitle"></h3>
+          <ul id="ladderList"></ul>
+        </div>
+        <div>
+          <h3 id="snakesTitle"></h3>
+          <ul id="snakeList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 id="logTitle"></h2>
+      <p class="empty" id="logEmpty"></p>
+      <ul class="log-list" id="logList"></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="statsTitle"></h2>
+      <div class="stats-grid">
+        <div><span class="big" id="gamesPlayedNum">0</span><br><span class="lbl" id="gamesPlayedLbl"></span></div>
+      </div>
+      <ul class="stats-list" id="winsList"></ul>
+      <p class="empty hidden" id="statsEmpty"></p>
+      <div style="margin-top:10px">
+        <button id="resetStatsBtn" class="secondary" type="button"></button>
+        <button id="newGameBtn" class="secondary" type="button"></button>
+      </div>
+    </section>
+
+    <section class="card howto">
+      <h2 id="howToTitle"></h2>
+      <p id="howToText"></p>
+    </section>
+  </main>
+
+  <footer id="footerText"></footer>
+</div>
+
+<!-- Win overlay -->
+<div id="winOverlay" class="overlay hidden" role="dialog" aria-modal="true">
+  <div class="panel">
+    <div class="trophy">&#127942;</div>
+    <h2 id="winTitle"></h2>
+    <p id="winDetail"></p>
+    <div class="actions">
+      <button id="playAgainBtn" type="button"></button>
+      <button id="winNewGameBtn" class="secondary" type="button"></button>
+    </div>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
